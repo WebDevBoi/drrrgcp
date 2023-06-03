@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Geo Calamity Production</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    </head>
+    <body>
+        <div>
+            <header>
+              <div class="logo">  
+              <a href="index.html"><img src="logo.png" alt="logo" class="logo"></a>
+              </div>
+                <nav>
+                    <ul class="nav_links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="report.html">Report</a></li>
+                        <li><a href="aboutus.html">About GCP</a></li>
+                    <a class="cta" href="termsofservice.html"><button>Terms of Service</button></a>   
+                    </ul>
+                    </div>
+                </nav> 
+            </header>
+        </div>
+            
+        <div>
+            <div class="slideshow-container">
+                <div class="mySlides fade">
+                  <a href="report.html"><img src="19.gif" style="width:100%"></a> 
+                </div>
+                <div class="mySlides fade">
+                  <a href="aboutus.html"><img src="20.png" style="width:100%"></a>
+                </div>
+                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+              </div>
+              <br>
+              <div style="text-align:center">
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+              </div>
+        </div>
+        <script>
+            var slideIndex = 1;
+            showSlides(slideIndex);
+            function plusSlides(n) {
+              showSlides(slideIndex += n);
+            }
+            function currentSlide(n) {
+              showSlides(slideIndex = n);
+            }
+            function showSlides(n) {
+              var i;
+              var slides = document.getElementsByClassName("mySlides");
+              var dots = document.getElementsByClassName("dot");
+              if(n > slides.length) {
+                slideIndex = 1
+              }
+              if(n < 1) {
+                slideIndex = slides.length
+              }
+              for(i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+              }
+              for(i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+              }
+              slides[slideIndex - 1].style.display = "block";
+              dots[slideIndex - 1].className += " active";
+            }
+
+          </script>
+    </body>
+</html>
